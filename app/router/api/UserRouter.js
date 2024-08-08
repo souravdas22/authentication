@@ -1,5 +1,5 @@
 const express = require("express");
-const authController = require("../../modules/user/controller/AuthController");
+const authController = require("../../webservice/AuthController");
 const { AuthCheck } = require("../../middleware/AuthHelper");
 
 

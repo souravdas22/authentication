@@ -10,17 +10,13 @@
       crossorigin="anonymous"
     />
     <style>
-      .main {
+      body {
         background: linear-gradient(to right, #3b0871, #6620de);
         color: #fff;
-        height: 90vh;
-      }
-      .container{
-        padding: 50px;
       }
       .form-container {
         background-color: rgba(255, 255, 255, 0.1);
-        padding: 20px;
+        padding: 20px 40px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
@@ -47,48 +43,61 @@
       }
     </style>
 
-    <title>Document</title>
+    <title>Register</title>
   </head>
   <body>
-     <%- include('header') %>
- <div class="main d-flex align-items-center">
-    <div class="container ">
-      <form class="col-4 mx-auto form-container" method="post" action="/login-user">
-        <h1 class="text-center my-4">Login</h1>
+    <%- include('header')  %>
+    <div class="container mt-4">
+      <form class="col-5 mx-auto form-container">
+        <h1 class="text-center my-2">Register</h1>
+        
+        <!-- First name input -->
+        <div class="form-outline mb-3">
+          <input type="text" id="formFirstName" class="form-control" />
+          <label class="form-label" for="formFirstName">First Name</label>
+        </div>
+
+        <!-- Last name input -->
+        <div class="form-outline mb-3">
+          <input type="text" id="formLastName" class="form-control" />
+          <label class="form-label" for="formLastName">Last Name</label>
+        </div>
+
         <!-- Email input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1" name="email">Email address</label>
+        <div class="form-outline mb-3">
+          <input type="email" id="formEmail" class="form-control" />
+          <label class="form-label" for="formEmail">Email address</label>
         </div>
 
         <!-- Password input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="password" id="form2Example2" class="form-control" />
-          <label class="form-label" for="form2Example2" name="password">Password</label>
+        <div class="form-outline mb-3">
+          <input type="password" id="formPassword" class="form-control" />
+          <label class="form-label" for="formPassword">Password</label>
+        </div>
+
+        <!-- Confirm Password input -->
+        <div class="form-outline mb-3">
+          <input type="password" id="formConfirmPassword" class="form-control" />
+          <label class="form-label" for="formConfirmPassword">Confirm Password</label>
         </div>
 
         <!-- Submit button -->
         <div class="d-grid">
           <button
             type="button"
-            data-mdb-button-init
-            data-mdb-ripple-init
-            class="btn btn-primary btn-block mb-4"
+            class="btn btn-primary btn-block mb-3"
           >
-            Sign in
+            Register
           </button>
         </div>
 
-        <!-- Register buttons -->
+        <!-- Sign in button -->
         <div class="text-center">
-          <p>
-            Not a member? <a href="/register" class="text-white">Register</a>
-          </p>
+          <p>Already a member? <a href="/login" class="text-white">Sign In</a></p>
         </div>
       </form>
     </div>
- </div>
-    <%- include('footer') %>
+    <%- include('footer')  %>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

@@ -1,9 +1,9 @@
-const { hashPassword, comparePassword } = require("../../../middleware/AuthHelper");
-const UserModel = require("../model/user");
+const { hashPassword, comparePassword } = require("../middleware/AuthHelper");
+const UserModel = require("../modules/user/model/user");
 const jwt = require("jsonwebtoken");
-const authRepository = require("../Repository/authRepository");
+const authRepository = require("../modules/user/Repository/AuthRepository");
 
-class AuthControlller {
+class AuthApiControlller {
   async register(req, res) {
     try {
       const { name, email, password, mobile, first_school, role, city } =
@@ -188,6 +188,6 @@ class AuthControlller {
   }
 }
 
-const authController = new AuthControlller();
+const authController = new AuthApiControlller();
 
 module.exports = authController;
